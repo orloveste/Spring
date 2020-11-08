@@ -1,10 +1,7 @@
 package myApp.controlers;
 
 import myApp.controlers.jsons.Person;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,5 +31,10 @@ public class PersonController {
         person.setCnp(id);
         person.setName("persoana cu id");
         return person;
+    }
+
+    @PutMapping
+    public void save(@RequestBody Person person) {
+        System.out.println("save this " + person);
     }
 }
