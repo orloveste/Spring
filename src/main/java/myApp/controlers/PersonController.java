@@ -2,6 +2,7 @@ package myApp.controlers;
 
 import myApp.controlers.jsons.Person;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -25,5 +26,13 @@ public class PersonController {
         people.add(person1);
         people.add(person2);
         return people;
+    }
+
+    @GetMapping("/{id}")
+    public Person findById(@PathVariable("id") Integer id) {
+        Person person = new Person();
+        person.setCnp(id);
+        person.setName("persoana cu id");
+        return person;
     }
 }
