@@ -1,4 +1,4 @@
-package testJava15.controlers.jsons;
+package myApp.controlers.jsons;
 
 import lombok.Data;
 

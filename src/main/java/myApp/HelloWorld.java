@@ -1,4 +1,4 @@
-package testJava15;
+package myApp;
 
 public class HelloWorld {
     public static void main(String[] args) {
