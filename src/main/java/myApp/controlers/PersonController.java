@@ -14,19 +14,20 @@ import java.util.List;
 public class PersonController {
 
     final private PersonService personService;
-
-    @GetMapping //expune serviciul REST si il implementeaza
+    @GetMapping
     public List<PersonJson> findAll() {
         return personService.findAll();
     }
-
     @GetMapping("/{id}")
     public PersonJson findById(@PathVariable("id") Integer id) {
         return personService.findById(id);
     }
-
     @PutMapping
     public void save(@RequestBody PersonJson personJson) {
         personService.save(personJson);
+    }
+    @DeleteMapping("/{id}")
+    public void deleteById(@PathVariable("id") Integer id) {
+        personService.deleteById(id);
     }
 }

@@ -1,36 +1,27 @@
 package myApp.services;
 
+import lombok.RequiredArgsConstructor;
 import myApp.controlers.jsons.PersonJson;
+import myApp.repositories.PersonRepository;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Service
+@RequiredArgsConstructor
 public class PersonService {
-
+    final private PersonRepository personRepository;
     public List<PersonJson> findAll() {
-        PersonJson personJson1 = new PersonJson();
-        personJson1.setCnp(1);
-        personJson1.setName("ion");
-        PersonJson personJson2 = new PersonJson();
-        personJson2.setCnp(2);
-        personJson2.setName("maria");
-
-        List<PersonJson> people = new ArrayList<>();
-        people.add(personJson1);
-        people.add(personJson2);
-        return people;
+        return personRepository.findAll();
     }
-
     public PersonJson findById(Integer id) {
-        PersonJson personJson = new PersonJson();
-        personJson.setCnp(id);
-        personJson.setName("persoana cu id");
-        return personJson;
+        return personRepository.findById(id).get();
+    }
+    public void save(PersonJson personJson) {
+        personRepository.save(personJson);
+    }
+    public void deleteById(Integer id) {
+        personRepository.deleteById(id);
     }
 
-    public void save(PersonJson personJson) {
-        System.out.println("save this " + personJson);
-    }
 }
