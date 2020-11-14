@@ -22,14 +22,11 @@ public class PersonController {
 
     @GetMapping("/{id}")
     public PersonJson findById(@PathVariable("id") Integer id) {
-        PersonJson personJson = new PersonJson();
-        personJson.setCnp(id);
-        personJson.setName("persoana cu id");
-        return personJson;
+        return personService.findById(id);
     }
 
     @PutMapping
     public void save(@RequestBody PersonJson personJson) {
-        System.out.println("save this " + personJson);
+        personService.save(personJson);
     }
 }

@@ -22,4 +22,15 @@ public class PersonService {
         people.add(personJson2);
         return people;
     }
+
+    public PersonJson findById(Integer id) {
+        PersonJson personJson = new PersonJson();
+        personJson.setCnp(id);
+        personJson.setName("persoana cu id");
+        return personJson;
+    }
+
+    public void save(PersonJson personJson) {
+        System.out.println("save this " + personJson);
+    }
 }
