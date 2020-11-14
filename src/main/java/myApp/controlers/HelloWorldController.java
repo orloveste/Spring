@@ -11,6 +11,11 @@ public class HelloWorldController {
     @Autowired
     Singletone singletone;
 
+    //injectie la nivel de constructor dependinte
+    public HelloWorldController(@Autowired Singletone singletone) {
+        this.singletone = singletone;
+    }
+
     @GetMapping
     public String hello() {
         return singletone.hello();
