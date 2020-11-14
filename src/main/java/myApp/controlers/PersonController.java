@@ -1,6 +1,8 @@
 package myApp.controlers;
 
+import lombok.RequiredArgsConstructor;
 import myApp.controlers.jsons.PersonJson;
+import myApp.services.PersonService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -9,7 +11,10 @@ import java.util.List;
 @RestController
 // https://ro.wikipedia.org/wiki/Model-view-controller
 @RequestMapping("/person")
+@RequiredArgsConstructor
 public class PersonController {
+
+    final private PersonService personService;
 
     @GetMapping ("")//expune serviciul REST si il implementeaza
     public List<PersonJson> findAll() {
