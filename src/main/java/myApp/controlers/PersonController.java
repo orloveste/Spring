@@ -5,7 +5,6 @@ import myApp.controlers.jsons.PersonJson;
 import myApp.services.PersonService;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -16,19 +15,9 @@ public class PersonController {
 
     final private PersonService personService;
 
-    @GetMapping ("")//expune serviciul REST si il implementeaza
+    @GetMapping //expune serviciul REST si il implementeaza
     public List<PersonJson> findAll() {
-        PersonJson personJson1 = new PersonJson();
-        personJson1.setCnp(1);
-        personJson1.setName("ion");
-        PersonJson personJson2 = new PersonJson();
-        personJson2.setCnp(2);
-        personJson2.setName("maria");
-
-        List<PersonJson> people = new ArrayList<>();
-        people.add(personJson1);
-        people.add(personJson2);
-        return people;
+        return personService.findAll();
     }
 
     @GetMapping("/{id}")
