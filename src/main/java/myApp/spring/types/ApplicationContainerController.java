@@ -1,6 +1,8 @@
 package myApp.spring.types;
 
 import myApp.spring.di.TargetDI;
+import myApp.spring.factory.Product;
+import myApp.spring.factory.TargetDIFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,5 +21,7 @@ public class ApplicationContainerController {
         System.out.println(applicationContext.getBean(MySingleton.class));
         System.out.println(applicationContext.getBean(MyPrototype.class));
         System.out.println(applicationContext.getBean(TargetDI.class));
+        System.out.println(applicationContext.getBean(TargetDIFactory.class));
+        System.out.println(applicationContext.getBean(Product.class));
     }
 }
