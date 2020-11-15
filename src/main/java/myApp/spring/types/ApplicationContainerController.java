@@ -16,5 +16,6 @@ public class ApplicationContainerController {
     public void play() {
         System.out.println(applicationContext);//pune mana pe container-ul de spring si poate fi interogat
         System.out.println(applicationContext.getBean(MySingleton.class));
+        System.out.println(applicationContext.getBean(MyPrototype.class));
     }
 }
