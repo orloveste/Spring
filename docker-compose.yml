@@ -7,6 +7,6 @@ services:
       - 3306:3306
     environment:
       - MYSQL_USER=zuza
-      - MYSQL_PASSWORD=root
-      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_PASSWORD=muza
+      - MYSQL_ROOT_PASSWORD=muza
       - MYSQL_DATABASE=scoala
