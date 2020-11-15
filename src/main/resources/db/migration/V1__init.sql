@@ -1,0 +1,1 @@
+create table persoana(cnp int, name varchar(50));
