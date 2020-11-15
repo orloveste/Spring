@@ -7,10 +7,16 @@ import javax.annotation.PreDestroy;
 
 @Component
 public class MySingleton {//lifecicle
+
+    MySingleton() {
+        System.out.println("construct " + this);
+    }
+
     @PostConstruct
     public void construct() {
         System.out.println("initializeaza " + this);
     }
+
     @PreDestroy
     public void destroy() {
         System.out.println("Distruge tot "+ this);
