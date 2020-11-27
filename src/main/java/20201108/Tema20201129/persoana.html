@@ -4,3 +4,22 @@
     <meta charset="UTF-8">
     <title>Persoana</title>
 </head>
+<body>
+<div id="persoana">
+    {{persoanaNoua}} <br>
+    {{datePersoanale}}
+    <br>
+    Add Persoana : <label>
+    <input placeholder="Prenumele si Numele" v-model="prenumeNumeNou">
+</label>
+
+    <label>
+        <input placeholder="CNP" v-model="cnpNou">
+    </label>
+    <button v-on:click="addPersona">Adauga Persona</button><br>
+
+</div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="persoana.js"></script>
+</html>
