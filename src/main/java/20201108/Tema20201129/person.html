@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml" xmlns:v-bind="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Person</title>
+</head>
+<body>
+<div id="person">
+    {{newPerson}} <br>
+
+    Add Person : <label>
+    <input placeholder="Surname and Name" v-model="itemName">
+</label>
+
+    <label>
+        <input placeholder="CNP" v-model="itemCNP">
+    </label>
+    <select v-model="personItem.sex">
+        <option v-for="sex in personSex" v-bind:value="sex">
+            {{ sex }}
+        </option>
+    </select>
+    <button v-on:click="addPerson">Add Person</button><br>
+
+</div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="person.js"></script>
+</html>
