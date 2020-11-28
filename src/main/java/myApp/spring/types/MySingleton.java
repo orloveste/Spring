@@ -18,7 +18,7 @@ public class MySingleton {//lifecicle
         System.out.println("initializeaza " + this);
     }
 
-    @PreDestroy
+    @PreDestroy//inainte de a distruge singleton-ul se distruge bean-ul se utilizeaza daca este cazul
     public void destroy() {
         System.out.println("Distruge tot "+ this);
     }
