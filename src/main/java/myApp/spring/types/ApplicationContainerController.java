@@ -29,7 +29,7 @@ public class ApplicationContainerController {
         bean.xxx.f();
         System.out.println("==================");
 
-        applicationContext.getBean(MySingleton.class).service();
+        applicationContext.getBean(MySingleton.class).service();// indiferent de clasa din pachet se va executa acest aspect
 
     }
 }
