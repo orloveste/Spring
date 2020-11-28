@@ -5,6 +5,10 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class TargetDI {
+
+    @Autowired
+    public XXX xxx;
+
     @Autowired
     private InjectionDI injectionDI;
 

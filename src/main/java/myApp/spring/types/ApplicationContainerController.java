@@ -20,8 +20,10 @@ public class ApplicationContainerController {
         System.out.println(applicationContext);//pune mana pe container-ul de spring si poate fi interogat
         System.out.println(applicationContext.getBean(MySingleton.class));
         System.out.println(applicationContext.getBean(MyPrototype.class));
-        System.out.println(applicationContext.getBean(TargetDI.class));
+        TargetDI bean = applicationContext.getBean(TargetDI.class);
         System.out.println(applicationContext.getBean(TargetDIFactory.class));
         System.out.println(applicationContext.getBean(Product.class));
+        System.out.println("==================");
+
     }
 }
