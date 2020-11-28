@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 public class TargetDI {
 
     @Autowired
-    public XXX xxx;
+    public XXX xxx;//prin camp
 
     @Autowired
     private InjectionDI injectionDI;
@@ -15,7 +15,7 @@ public class TargetDI {
     private InjectionDI2 injectionDI2;
 
     @Autowired
-    public TargetDI(InjectionDI2 injectionDI2) {//prin constructor
+    public TargetDI(InjectionDI2 injectionDI2) {//prin constructor - recomanded
         this.injectionDI2 = injectionDI2;
     }
     private InjectionDI3 injectionDI3;
