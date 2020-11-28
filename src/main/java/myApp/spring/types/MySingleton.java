@@ -1,6 +1,6 @@
 package myApp.spring.types;
 
-import myApp.spring.AppConfig;
+import myApp.spring.config.AppConfig;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
