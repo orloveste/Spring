@@ -6,5 +6,6 @@ import org.springframework.stereotype.Component;
 @Component
 public class TargetDIFactory {
     @Autowired
-    Product product;
+    Product product;//nu se creaza instanta de produs - apeleaza instanta ca sa o creeze
+    /*se utilizeaza ca sa faci ceva prin factory*/
 }

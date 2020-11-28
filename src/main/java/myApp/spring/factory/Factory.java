@@ -5,7 +5,7 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class Factory {
-    @Bean
+    @Bean// metoda asta este un factory
     Product createProduct() {
         return new Product();
     }
