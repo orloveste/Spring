@@ -13,7 +13,7 @@ public class MySingleton {//lifecicle
         System.out.println("construct " + this);
     }
 
-    @PostConstruct
+    @PostConstruct//se ruleaza la crearea de instanta
     public void construct() {
         System.out.println("initializeaza " + this);
     }
