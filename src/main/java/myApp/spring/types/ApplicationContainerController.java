@@ -29,5 +29,7 @@ public class ApplicationContainerController {
         bean.xxx.f();
         System.out.println("==================");
 
+        applicationContext.getBean(MySingleton.class).service();
+
     }
 }

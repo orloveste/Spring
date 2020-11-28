@@ -34,4 +34,9 @@ public class MySingleton {//lifecicle
     public void destroy() {
         System.out.println("Distruge tot "+ this);
     }
+
+    public void service() {
+        System.out.println("business complex");
+    }
+
 }
