@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class TargetDI {
 
-    @Autowired
+    @Autowired// nu este obligatoriu daca faci injectia manual
     public XXX xxx;//prin camp
 
     @Autowired
