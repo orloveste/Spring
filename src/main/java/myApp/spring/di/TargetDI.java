@@ -15,13 +15,13 @@ public class TargetDI {
     private InjectionDI2 injectionDI2;
 
     @Autowired
-    public TargetDI(InjectionDI2 injectionDI2) {
+    public TargetDI(InjectionDI2 injectionDI2) {//prin constructor
         this.injectionDI2 = injectionDI2;
     }
     private InjectionDI3 injectionDI3;
 
     @Autowired
-    public void setInjectionDI3(InjectionDI3 injectionDI3) {
+    public void setInjectionDI3(InjectionDI3 injectionDI3) {//prin setter
         this.injectionDI3 = injectionDI3;
     }
 }
