@@ -5,5 +5,5 @@ import org.springframework.stereotype.Component;
 
 @Component
 @Aspect
-public class LoggingAspect {
+public class LoggingAspect { //elemente AOP wiki
 }
