@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class HelloWorldMVC {
 
     @GetMapping()
-    public String hello(Model model) {
-        return "hello";
+    public String hello(Model model) {//parte din semnatura de metoda - model
+        return "hello";//textul returnat trebuie sa fie un nume de template - match cu nume de fisier din folder de template
     }
 }
