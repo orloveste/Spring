@@ -35,7 +35,7 @@ public class PersonMVCController {
         model.addAttribute("person", personJson);
         return "personCreate";
     }
-    @PostMapping(value = "/savePerson")//salveaza pagina
+    @PostMapping(value = "/savePerson")//salveaza pagina din form - personCreate.html
     public String savePerson (Model model, @ModelAttribute PersonJson personJson, BindingResult errors){
         model.addAttribute("person", personJson);
         personService.save(personJson);// de la url /persons/createPerson - mergi in pagina person.create.html
