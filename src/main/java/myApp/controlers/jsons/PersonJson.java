@@ -2,14 +2,12 @@ package myApp.controlers.jsons;
 
 import lombok.Data;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Data
 @Entity
 @Table(name = "persoana")
+@NamedQueries(name = "xxx", query = "select t from PersonJson t")
 public class PersonJson {
     @Id
     @Column(name = "cnp")
