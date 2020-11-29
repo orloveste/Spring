@@ -1,0 +1,16 @@
+<form action="#" th:action="@{/persons/savePerson}" th:object="${person}" method="post"
+      xmlns:th="http://www.w3.org/1999/xhtml">
+    <table border="1">
+        <tr>
+            <td><label th:text="cnp" /></td>
+            <td><input type="number" th:field="*{cnp}" /></td>
+        </tr>
+        <tr>
+            <td><label th:text="name" /></td>
+            <td><input type="text" th:field="*{name}" /></td>
+        </tr>
+        <tr>
+            <td><input type="submit" value="Submit" /></td>
+        </tr>
+    </table>
+</form>
