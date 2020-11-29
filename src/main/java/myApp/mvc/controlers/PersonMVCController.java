@@ -1,6 +1,8 @@
 package myApp.mvc.controlers;
 
 import myApp.controlers.jsons.PersonJson;
+import myApp.services.PersonService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -9,27 +11,20 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Controller
 @RequestMapping(value = "/persons")
+
 public class PersonMVCController {
+
+    @Autowired
+    PersonService personService;//populat de spring
+
     @GetMapping(value = "list")
     public String listPersons(Model model) {//parte din semnatura de metoda - model
-        List<PersonJson> list = new ArrayList<>();
-        {
-            PersonJson personJson = new PersonJson();
-            personJson.setCnp(1);
-            personJson.setName("ion");
-            list.add(personJson);
-        }
-        {
-            PersonJson personJson = new PersonJson();
-            personJson.setCnp(2);
-            personJson.setName("ghe");
-            list.add(personJson);
-        }
+        List<PersonJson> list = personService.findAll();//da-mi lista de persoane din DB
+
         model.addAttribute("persons", list);//controller-ul gestioneaza modelul si view-ul care trebui desenat
 
         return "persons";//textul returnat trebuie sa fie un nume de template - match cu nume de fisier din folder de template
