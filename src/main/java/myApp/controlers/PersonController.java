@@ -3,6 +3,7 @@ package myApp.controlers;
 import lombok.RequiredArgsConstructor;
 import myApp.controlers.jsons.PersonJson;
 import myApp.services.PersonService;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
@@ -16,9 +17,11 @@ import java.util.List;
 public class PersonController {
 //http://localhost:8080/person Json
     final private PersonService personService;
+
     @GetMapping
-    public List<PersonJson> findAll(HttpServletRequest request, HttpServletResponse response) {
-        return personService.findAll();//debug and see
+    public ResponseEntity<List<PersonJson>> findAll(HttpServletRequest request, HttpServletResponse response) {
+        return ResponseEntity.ok(personService.findAll());//debug and see
+        //statusul implicit prin server - cerere primita, procesata, raspuns si trimis la client
     }
     @GetMapping("/{id}")
     public PersonJson findById(@PathVariable("id") Integer id) {
