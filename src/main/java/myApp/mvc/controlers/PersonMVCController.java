@@ -29,13 +29,13 @@ public class PersonMVCController {
 
         return "persons";//textul returnat trebuie sa fie un nume de template - match cu nume de fisier din folder de template
     }
-    @GetMapping(value = "/createPerson")
+    @GetMapping(value = "/createPerson")// desemneaza pagina
     public String createPerson (Model model){
         PersonJson personJson = new PersonJson();
         model.addAttribute("person", personJson);
         return "personCreate";
     }
-    @PostMapping(value = "/savePerson")
+    @PostMapping(value = "/savePerson")//salveaza pagina
     public String savePerson (Model model, @ModelAttribute PersonJson personJson, BindingResult errors){
         model.addAttribute("person", personJson);
         personService.save(personJson);// de la url /persons/createPerson - mergi in pagina person.create.html
