@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>persons</title>
+</head>
+<body>
+<tbody xmlns:th="http://www.w3.org/1999/xhtml">
+<table>
+    <tr th:each="person: ${persons}">
+        <!--        persons este cheia text -  vezi ca este o lista - itereaza in lista
+        dar itereaza si pentru fiecare item itereaza cu person - cheie in contextul de evaluare al template-ului
+        variabila temporara parte in procesul de evaluare-->
+        <td th:text="${person.cnp}"/>
+        <!--        .cnp sau .name interpreteaza prin reflexion se uita dupa getter-->
+        <td th:text="${person.name}"/>
+        <!--        person.name -->
+    </tr>
+</table>
+</tbody>
+</body>
+</html>
