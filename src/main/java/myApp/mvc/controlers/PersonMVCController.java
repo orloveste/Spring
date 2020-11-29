@@ -41,6 +41,7 @@ public class PersonMVCController {
         model.addAttribute("person", personJson);
         personService.save(personJson);// de la url /persons/createPerson - mergi in pagina person.create.html
         //le salveaza in serviciu si le trimite inapoi
+        //MVC controller - legate de model , interfata, date mult mai greu de modificat si nu pot fi separate
         List<PersonJson> list = personService.findAll();//da-mi lista de persoane din DB
         model.addAttribute("persons", list);//controller-ul gestioneaza modelul si view-ul care trebui desenat
         return "persons";//savePerson

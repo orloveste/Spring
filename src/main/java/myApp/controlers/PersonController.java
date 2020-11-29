@@ -12,7 +12,7 @@ import java.util.List;
 @RequestMapping("/person")
 @RequiredArgsConstructor
 public class PersonController {
-
+//http://localhost:8080/person Json
     final private PersonService personService;
     @GetMapping
     public List<PersonJson> findAll() {
