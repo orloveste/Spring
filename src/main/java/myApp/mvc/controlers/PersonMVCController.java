@@ -27,7 +27,8 @@ public class PersonMVCController {
             personJson.setName("ghe");
             list.add(personJson);
         }
-        model.addAttribute("persons", list);
+        model.addAttribute("persons", list);//controller-ul gestioneaza modelul si view-ul care trebui desenat
+
         return "persons";//textul returnat trebuie sa fie un nume de template - match cu nume de fisier din folder de template
     }
 }
