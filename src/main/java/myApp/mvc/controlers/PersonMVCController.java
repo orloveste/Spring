@@ -38,7 +38,8 @@ public class PersonMVCController {
     @PostMapping(value = "/savePerson")
     public String savePerson (Model model, @ModelAttribute PersonJson personJson, BindingResult errors){
         model.addAttribute("person", personJson);
-        System.out.println("saving " + personJson);
-        return "personCreate";
+        personService.save(personJson);// de la url /persons/createPerson - mergi in pagina person.create.html
+        //le salveaza in serviciu si le trimite inapoi
+        return "personCreate";//savePerson
     }
 }
