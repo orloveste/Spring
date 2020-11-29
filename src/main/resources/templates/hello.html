@@ -1,5 +1,12 @@
 <html>
 <body>
-hello world mvc
+<tbody>
+<table>
+    <tr th:each="person: ${persons}">
+        <td th:text="${person.cnp}"/>
+        <td th:text="${person.name}"/>
+    </tr>
+</table>
+</tbody>
 </body>
 </html>
