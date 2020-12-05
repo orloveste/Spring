@@ -14,10 +14,12 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.NoSuchElementException;
 import static org.springframework.http.HttpStatus.NOT_FOUND;
-@RestControllerAdvice
+@RestControllerAdvice//exista un loc in aplicatie cand poti sa customizezi sablonul de lucru
+
 public class ControllerExceptionHandler extends ResponseEntityExceptionHandler {
-    @ExceptionHandler(EmptyResultDataAccessException.class)
+    @ExceptionHandler(EmptyResultDataAccessException.class)//metoda handler - semnatura cu exceptia targetatata
     public ResponseEntity<Object> handleEmptyResultDataAccessException(EmptyResultDataAccessException e) {
+        //raspuns trimis la client dupa evaluarea erorii
         // better logs here
         return new ResponseEntity<>(e.getCause(), NOT_FOUND);
     }
@@ -52,8 +54,12 @@ public class ControllerExceptionHandler extends ResponseEntityExceptionHandler {
         });
         return new ResponseEntity<>(errors, HttpStatus.BAD_REQUEST);
     }
-    @ExceptionHandler(MyException.class)
-    public ResponseEntity<Object> handleMine(MyException e) {
-        return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
+    //doar asta facem
+    @ExceptionHandler(MyException.class) // apeleaza metoda mea custom
+    public ResponseEntity<Object> handleMine(MyException e) {//iei valoarea si o trimiti la client
+        return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);//construiesti raspunsul
+        //ai libertatea sa livrezi la client orice - garanteaza asta
+
+        //AOP before method - pentru count exceptions
     }
 }
