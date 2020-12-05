@@ -23,10 +23,14 @@ public class PersonController {
         return ResponseEntity.ok(personService.findAll());//debug and see
         //statusul implicit prin server - cerere primita, procesata, raspuns si trimis la client
     }
+
+
     @GetMapping("/{id}")
-    public PersonJson findById(@PathVariable("id") Integer id) {
+    public PersonJson findById(@PathVariable("id") @Min Integer id) {// cauti pe net exemplu pom dependency
         return personService.findById(id);
     }
+
+
     @PutMapping
     public void save(@RequestBody PersonJson personJson) {
         personService.save(personJson);
