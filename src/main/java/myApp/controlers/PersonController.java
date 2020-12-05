@@ -21,6 +21,7 @@ import java.util.List;
 @RequiredArgsConstructor
 @Validated //va trebui sa valideze clasa
 @Slf4j//lombok log
+
 public class PersonController {
 //http://localhost:8080/person Json
     final private PersonService personService;
