@@ -48,4 +48,9 @@ public class PersonController {
     public void deleteById(@PathVariable("id") Integer id) {
         personService.deleteById(id);
     }
+
+    @GetMapping("/error")
+    public void error() {
+        throw new RuntimeException("belea eroare");
+    }
 }
