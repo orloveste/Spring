@@ -15,5 +15,7 @@ public class PersonJson {
 
     @Column(name = "name")
     private String name;
+    //put data in  postman and ask id 10
+    //use bean validation
 
 }
