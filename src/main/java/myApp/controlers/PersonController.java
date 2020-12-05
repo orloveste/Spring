@@ -1,6 +1,7 @@
 package myApp.controlers;
 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import myApp.controlers.jsons.PersonJson;
 import myApp.services.PersonService;
 import org.springframework.http.ResponseEntity;
@@ -18,6 +19,7 @@ import java.util.List;
 @RequestMapping("/person")
 @RequiredArgsConstructor
 @Validated //va trebui sa valideze clasa
+@Slf4j//lombok log
 public class PersonController {
 //http://localhost:8080/person Json
     final private PersonService personService;
@@ -38,7 +40,10 @@ public class PersonController {
     @PutMapping
     public void save(@RequestBody @Valid PersonJson personJson) {
         personService.save(personJson);
+        /*System.out.println(" mesaj in consola");//specificatiile interzic asta de obicei*/
+        log.error("eroare raportata");//poate fi customizat in fisiere separate dar o persoana trebuie sa analizeze
     }
+
     @DeleteMapping("/{id}")
     public void deleteById(@PathVariable("id") Integer id) {
         personService.deleteById(id);
