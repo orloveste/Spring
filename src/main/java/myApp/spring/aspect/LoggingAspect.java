@@ -5,7 +5,7 @@ import org.aspectj.lang.annotation.Before;
 import org.springframework.stereotype.Component;
 
 @Component
-@Aspect
+@Aspect //poti sa il setezi ca si contor
 public class LoggingAspect { //elemente AOP wiki
     @Before(value = "execution(* myApp.spring.types.*.*(..))")
     void aspectExecutedBeforeExecutingTargetedMethods() {

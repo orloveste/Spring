@@ -50,6 +50,7 @@ public class PersonController {
         personService.deleteById(id);
     }
 
+    //aspect care contorizeaza
     @GetMapping("/error")
     public void error() {
         throw new MyException("belea eroare");
