@@ -2,6 +2,7 @@ package myApp.controlers;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import myApp.controlers.exceptions.MyException;
 import myApp.controlers.jsons.PersonJson;
 import myApp.services.PersonService;
 import org.springframework.http.ResponseEntity;
@@ -51,6 +52,6 @@ public class PersonController {
 
     @GetMapping("/error")
     public void error() {
-        throw new RuntimeException("belea eroare");
+        throw new MyException("belea eroare");
     }
 }
