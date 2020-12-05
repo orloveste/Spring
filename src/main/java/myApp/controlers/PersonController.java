@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.validation.constraints.Min;
 import java.util.List;
 
 @RestController
@@ -26,7 +27,7 @@ public class PersonController {
 
 
     @GetMapping("/{id}")
-    public PersonJson findById(@PathVariable("id") @Min Integer id) {// cauti pe net exemplu pom dependency
+    public PersonJson findById(@PathVariable("id") @Min(0) Integer id) {// cauti pe net exemplu pom dependency
         return personService.findById(id);
     }
 
