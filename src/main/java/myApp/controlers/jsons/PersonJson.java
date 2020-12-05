@@ -3,6 +3,7 @@ package myApp.controlers.jsons;
 import lombok.Data;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
 
 @Data
 @Entity
@@ -13,6 +14,7 @@ public class PersonJson {
     @Column(name = "cnp")
     private Integer cnp;
 
+    @NotEmpty// nu ponteaza la nul ci la text gol
     @Column(name = "name")
     private String name;
     //put data in  postman and ask id 10
