@@ -36,7 +36,7 @@ public class PersonController {
 
 
     @PutMapping
-    public void save(@RequestBody PersonJson personJson) {
+    public void save(@RequestBody @Valid PersonJson personJson) {
         personService.save(personJson);
     }
     @DeleteMapping("/{id}")
