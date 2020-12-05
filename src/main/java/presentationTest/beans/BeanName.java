@@ -1,5 +1,8 @@
 package presentationTest.beans;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class BeanName {
     /*public String getName() {
 
