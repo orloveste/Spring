@@ -5,6 +5,7 @@ import myApp.controlers.jsons.PersonJson;
 import myApp.repositories.PersonRepository;
 import org.springframework.stereotype.Service;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @Service
@@ -23,7 +24,7 @@ public class PersonService {
     public void deleteById(Integer id) {
         personRepository.deleteById(id);
     }
-    public void audit() {
+    public void audit(HttpServletRequest request) {
 
     }
 
