@@ -51,14 +51,16 @@ public class PersonControllerTest {
 
         //2
         //comportamentul mock-urilor
-        ResponseEntity<List<PersonJson>> responseEntity = targetObject.findAll(null,null);
+        ResponseEntity<List<PersonJson>> responseEntity = targetObject.findAll(request,null);
         //3
         Assertions.assertEquals(jsons, responseEntity.getBody());//validare equals
         Assertions.assertSame(jsons, responseEntity.getBody());//validare ==
         //3.1 verifica interactiunea cu mock-ul daca se produce
         //
+
         InOrder inOrder = Mockito.inOrder(mock);
-        inOrder.verify(mock).findAll();// verifica linia 45
         inOrder.verify(mock).audit(request);// pe tine te va chema auditul si vei primi parametru acest request
+        inOrder.verify(mock).findAll();// verifica linia 45
+
     }
 }
