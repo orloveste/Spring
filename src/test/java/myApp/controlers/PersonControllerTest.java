@@ -5,6 +5,7 @@ import myApp.services.PersonService;
 import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
 import org.junit.runner.RunWith;
+import org.mockito.InOrder;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
@@ -56,7 +57,8 @@ public class PersonControllerTest {
         Assertions.assertSame(jsons, responseEntity.getBody());//validare ==
         //3.1 verifica interactiunea cu mock-ul daca se produce
         //
-        Mockito.verify(mock).findAll();// verifica linia 45
-//        Mockito.verify(mock).audit(request);// pe tine te va chema auditul si vei primi parametru acest request
+        InOrder inOrder = Mockito.inOrder(mock);
+        inOrder.verify(mock).findAll();// verifica linia 45
+        inOrder.verify(mock).audit(request);// pe tine te va chema auditul si vei primi parametru acest request
     }
 }
