@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 import javax.validation.constraints.Min;
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -27,9 +28,14 @@ public class PersonController {
 
     @GetMapping
     public ResponseEntity<List<PersonJson>> findAll(HttpServletRequest request, HttpServletResponse response) {
-        return ResponseEntity.ok(personService.findAll());//debug and see //proxi surogat chemi testul mok
-        //dependinta exterioara - mokito
-        //statusul implicit prin server - cerere primita, procesata, raspuns si trimis la client
+        if (false) {
+            return ResponseEntity.ok(personService.findAll());//debug and see //proxi surogat chemi testul mok
+            //dependinta exterioara - mokito
+            //statusul implicit prin server - cerere primita, procesata, raspuns si trimis la client
+        } else {
+            return  ResponseEntity.ok(new ArrayList<>());
+        }
+
     }
 
 // @valid la nivel de parametru si regula de validare
