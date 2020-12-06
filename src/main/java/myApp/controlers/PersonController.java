@@ -27,7 +27,10 @@ public class PersonController {
 
     @GetMapping
     public ResponseEntity<List<PersonJson>> findAll(HttpServletRequest request, HttpServletResponse response) {
-        personService.audit(request);
+
+        if (false) {
+            personService.audit(request);
+        }
             return ResponseEntity.ok(personService.findAll());//debug and see //proxi surogat chemi testul mok
             //dependinta exterioara - mokito
             //statusul implicit prin server - cerere primita, procesata, raspuns si trimis la client
