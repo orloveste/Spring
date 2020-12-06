@@ -42,7 +42,8 @@ public class PersonControllerTest {
         jsons.add(personJson);
         //specific mock-ului sa faca ceva, nu sunt oblicat sa definesc comportament pentru tot
         //doar la ce ma intereseaza
-        Mockito.when(mock.findAll()).thenReturn(jsons);
+        Mockito.when(mock.findAll()).thenReturn(jsons);// poti arunca exceptie cu throw - poti pune parametri la mock
+        //daca raspunde cu alti parametri = returneaza null;
         //2
         //comportamentul mock-urilor
         ResponseEntity<List<PersonJson>> responseEntity = targetObject.findAll(null,null);
