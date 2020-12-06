@@ -4,6 +4,7 @@ import myApp.controlers.jsons.PersonJson;
 import myApp.services.PersonService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.mockito.InjectMocks;
 import org.mockito.junit.MockitoJUnitRunner;
 import org.springframework.http.ResponseEntity;
 
@@ -12,7 +13,7 @@ import java.util.List;
 @RunWith(MockitoJUnitRunner.class)
 public class PersonControllerTest {
 
-    //@InjectMocks //ii spune lui mockito ca sa creeze o instanta de person controler
+    @InjectMocks //ii spune lui mockito ca sa creeze o instanta de person controler
     // care sa aiba o referintacatre person service
     //si-l invoca singur
     PersonController controller;
