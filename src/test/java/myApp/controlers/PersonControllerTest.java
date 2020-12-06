@@ -47,6 +47,7 @@ public class PersonControllerTest {
         //comportamentul mock-urilor
         ResponseEntity<List<PersonJson>> responseEntity = targetObject.findAll(null,null);
         //3
-        Assertions.assertTrue(responseEntity.getBody().isEmpty());
+        Assertions.assertEquals(jsons, responseEntity.getBody());//validare equals
+        Assertions.assertSame(jsons, responseEntity.getBody());//validare ==
     }
 }
