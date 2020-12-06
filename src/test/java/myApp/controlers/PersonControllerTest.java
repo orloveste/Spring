@@ -52,6 +52,6 @@ public class PersonControllerTest {
         Assertions.assertSame(jsons, responseEntity.getBody());//validare ==
         //3.1 verifica interactiunea cu mock-ul daca se produce
         //
-//        Mockito.verify(mock).findAll();// verifica linia 45
+        Mockito.verify(mock).findAll();// verifica linia 45
     }
 }
