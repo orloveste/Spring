@@ -10,7 +10,9 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
 import org.springframework.http.ResponseEntity;
+import org.springframework.mock.web.MockHttpServletRequest;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -44,6 +46,8 @@ public class PersonControllerTest {
         //doar la ce ma intereseaza
         Mockito.when(mock.findAll()).thenReturn(jsons);// poti arunca exceptie cu throw - poti pune parametri la mock
         //daca raspunde cu alti parametri = returneaza null;
+        HttpServletRequest request = new MockHttpServletRequest();//il trimit ca parametru la findAll
+
         //2
         //comportamentul mock-urilor
         ResponseEntity<List<PersonJson>> responseEntity = targetObject.findAll(null,null);
@@ -53,5 +57,6 @@ public class PersonControllerTest {
         //3.1 verifica interactiunea cu mock-ul daca se produce
         //
         Mockito.verify(mock).findAll();// verifica linia 45
+        Mockito.verify(mock).audit(request);// pe tine te va chema auditul si vei primi parametru acest request
     }
 }
