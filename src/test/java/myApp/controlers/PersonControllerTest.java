@@ -57,6 +57,6 @@ public class PersonControllerTest {
         //3.1 verifica interactiunea cu mock-ul daca se produce
         //
         Mockito.verify(mock).findAll();// verifica linia 45
-        Mockito.verify(mock).audit(request);// pe tine te va chema auditul si vei primi parametru acest request
+//        Mockito.verify(mock).audit(request);// pe tine te va chema auditul si vei primi parametru acest request
     }
 }
