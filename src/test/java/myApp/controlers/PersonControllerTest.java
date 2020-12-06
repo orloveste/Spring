@@ -60,6 +60,7 @@ public class PersonControllerTest {
 
         InOrder inOrder = Mockito.inOrder(mock);
         inOrder.verify(mock).audit(request);// pe tine te va chema auditul si vei primi parametru acest request
+        //verifica daca te-a chemat cineva
         inOrder.verify(mock).findAll();// verifica linia 45
 
     }
