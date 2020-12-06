@@ -5,6 +5,7 @@ import myApp.services.PersonService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
+import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
 import org.springframework.http.ResponseEntity;
 
@@ -21,7 +22,7 @@ public class PersonControllerTest {
 //        controller = new PersonController(mock); // asta este versiunea manuala
 //    }
 
-    //@Mock //am nevoie de acest personservice pe care il creezi tu
+    @Mock //am nevoie de acest personservice pe care il creezi tu
     PersonService service;
 //    PersonService service = Mockito.mock(PersonService.class); //creare mock manual
 // surogat care se preface ca este un obiect in personservice
@@ -33,5 +34,6 @@ public class PersonControllerTest {
         //2
         ResponseEntity<List<PersonJson>> responseEntity = controller.findAll(null,null);
         //3
+        System.out.println(responseEntity.getBody());
     }
 }
